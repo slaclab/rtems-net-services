@@ -249,6 +249,10 @@ char **argv;
 	if (argc < 2) goto usage;
 
 #ifdef __rtems__
+	/* These will persist across calls if not reset */
+	nbytes = 0;
+	numCalls = 0;
+
 	struct getopt_data getopt_reent;
 #define optarg getopt_reent.optarg
 #define optind getopt_reent.optind
