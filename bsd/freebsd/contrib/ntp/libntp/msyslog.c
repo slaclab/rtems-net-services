@@ -7,6 +7,10 @@
  * Converted to use varargs, much better ... jks
  */
 
+#ifdef __rtems__
+#define _GNU_SOURCE
+#endif
+ 
 #ifdef HAVE_CONFIG_H
 # include <config.h>
 #endif
